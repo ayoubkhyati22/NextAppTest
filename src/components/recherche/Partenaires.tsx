@@ -1,7 +1,6 @@
+import { TextField } from '@mui/material';
 import React from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Radio from '@mui/material/Radio';
 
 const Partenaires = () => {
   const { control } = useFormContext();
@@ -16,19 +15,13 @@ const Partenaires = () => {
           defaultValue=""
           render={({ field }) => (
             <>
-              <FormControlLabel
-                value="RMA"
-                control={<Radio />}
-                label="RMA"
+              <TextField
+                type="text"
+                placeholder="Enter selected partner"
                 {...field}
               />
-              <FormControlLabel
-                value="OtherPartner"
-                control={<Radio />}
-                label="Other Partner"
-                {...field}
-              />
-              {/* Add more partner options here */}
+              {/* You can remove the Radio component */}
+              {/* Add other partner options here */}
             </>
           )}
         />
